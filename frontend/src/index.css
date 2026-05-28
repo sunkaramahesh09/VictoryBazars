@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply font-sans text-gray-800 bg-white antialiased;
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-gray-100; }
+  ::-webkit-scrollbar-thumb { @apply bg-red-700 rounded-full; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-red-700 hover:bg-red-800 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 inline-flex items-center gap-2;
+  }
+  .btn-outline {
+    @apply border-2 border-red-700 text-red-700 hover:bg-red-700 hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 inline-flex items-center gap-2;
+  }
+  .btn-ghost {
+    @apply text-gray-600 hover:text-red-700 font-medium px-4 py-2 rounded-lg transition-colors duration-200 inline-flex items-center gap-2;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300;
+  }
+  .input-field {
+    @apply w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-700/30 focus:border-red-700 transition-all duration-200 bg-white;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-bold text-gray-900;
+  }
+  .section-subtitle {
+    @apply text-red-700 font-semibold text-sm uppercase tracking-widest mb-2 block;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-red { @apply badge bg-red-100 text-red-700; }
+  .badge-green { @apply badge bg-green-100 text-green-700; }
+  .badge-yellow { @apply badge bg-yellow-100 text-yellow-700; }
+  .badge-gray { @apply badge bg-gray-100 text-gray-700; }
+  .container-custom { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .skeleton { @apply animate-pulse bg-gray-200 rounded-lg; }
+  .page-hero {
+    @apply bg-gradient-to-r from-red-700 to-red-900 text-white py-16 relative overflow-hidden;
+  }
+  .nav-link {
+    @apply text-sm font-medium transition-colors duration-200 hover:text-red-700 relative;
+  }
+  .nav-link-active {
+    @apply text-red-700 font-semibold;
+  }
+  .stat-number {
+    @apply text-4xl md:text-5xl font-display font-black text-red-700;
+  }
+  .stat-label {
+    @apply text-gray-500 text-sm font-medium uppercase tracking-wide mt-1;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .animate-fade-in { animation: fadeIn 0.5s ease-in-out; }
+  .animate-slide-up { animation: slideUp 0.4s ease-out; }
+}
+
+/* WhatsApp floating button */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 50;
+  background: #25D366;
+  color: white;
+  border-radius: 50px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37,211,102,0.5);
+}
+
+/* Hero slider */
+.hero-slide { position: absolute; inset: 0; transition: opacity 0.7s ease-in-out; }
+.hero-slide.active { opacity: 1; z-index: 1; }
+.hero-slide.inactive { opacity: 0; z-index: 0; }
+
+/* PIN display */
+.pin-digit {
+  @apply w-16 h-20 bg-red-700 text-white text-4xl font-black rounded-xl flex items-center justify-center shadow-lg;
+}
+
+/* Admin sidebar */
+.admin-nav-item {
+  @apply flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 cursor-pointer;
+}
+.admin-nav-item:hover { @apply bg-red-50 text-red-700; }
+.admin-nav-item.active { @apply bg-red-700 text-white shadow-md; }
+
+/* Order status badges */
+.status-pending    { @apply badge bg-yellow-100 text-yellow-800; }
+.status-confirmed  { @apply badge bg-blue-100 text-blue-800; }
+.status-preparing  { @apply badge bg-orange-100 text-orange-800; }
+.status-ready      { @apply badge bg-green-100 text-green-800; }
+.status-completed  { @apply badge bg-gray-100 text-gray-700; }
+.status-cancelled  { @apply badge bg-red-100 text-red-800; }
+
+/* Product card hover */
+.product-card:hover .product-image { transform: scale(1.05); }
+.product-image { transition: transform 0.4s ease; }
+
+/* Skeleton loader */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Hero slider fade */
+@keyframes sliderFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
