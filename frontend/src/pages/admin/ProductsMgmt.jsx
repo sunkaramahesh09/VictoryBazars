@@ -9,9 +9,25 @@ import { FiPlus, FiEdit2, FiTrash2, FiX, FiSave, FiUploadCloud, FiImage } from '
 import toast from 'react-hot-toast';
 
 const CATEGORIES = [
-  'Groceries', 'Dairy & Eggs', 'Beverages', 'Snacks & Namkeen',
-  'Personal Care', 'Home Care', 'Baby Products', 'Bakery & Sweets',
-  'Frozen Foods', 'Gifting', 'Fresh Fruits & Vegetables', 'Staples',
+  'Dairy & Eggs',
+  'Fresh Fruits & Vegetables',
+  'Cold Drinks & Juices',
+  'Snacks & Munchies',
+  'Breakfast & Instant Food',
+  'Bakery & Sweets',
+  'Stationery & Books',
+  'Staples',
+  'Beverages',
+  'Masala & Oils',
+  'Fragrance',
+  'Baby Care',
+  'Pharmacy',
+  'Cleaning Essentials',
+  'Home Care',
+  'Personal Care',
+  'Pet Care',
+  'Gifting',
+  'Sauces & Spreads',
 ];
 
 const EMPTY = {
