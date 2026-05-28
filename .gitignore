@@ -1,0 +1,11 @@
+# Root-level gitignore
+
+# Environment variable files (contain secrets — never commit)
+backend/.env
+backend/.env.local
+
+# macOS
+.DS_Store
+
+# Node modules (each workspace has its own)
+node_modules/
